@@ -1,12 +1,17 @@
 import { Request, Response, NextFunction } from "express";
 
 export default function ErrorMiddleware(
-  err: Error,
+  err: Error & { status?: number },
   req: Request,
   res: Response,
   next: NextFunction
 ) {
-  res.status(500).send({
-    message: err.message,
+  const status = err.status || 500;
+  const message = err.message || "Internal Server Error";
+
+  res.status(status).send({
+    success: false,
+    status,
+    message,
   });
 }

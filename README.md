@@ -11,7 +11,7 @@ This project is a simple demonstration of a CRUD (Create, Read, Update, Delete) 
 
 ## TECH STACK
 
-- **PROGRAMMING LANGUAGE** : Typescript, Javascript
+- **PROGRAMMING LANGUAGE** : Typescript
 - **BACKEND** : Express.Js, Prisma
 - **DATABASE** : MySQL
 - **MISC** : nodemon, dotenv, bcrypt, express-validator

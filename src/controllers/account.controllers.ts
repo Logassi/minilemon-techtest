@@ -1,7 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { compare, genSalt, hash } from "bcrypt";
 import { Request, Response, NextFunction } from "express";
-import { SECRET_KEY } from "../configs";
 
 const prisma = new PrismaClient();
 

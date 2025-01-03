@@ -5,20 +5,23 @@ networks:
     name: node-api-networks
 
 services:
-  express-app-v4:
+  express-app-v6:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
-      - mysql-server-v3
+      - mysql-server-v5
     networks:
       - node-api-networks
-  mysql-server-v3:
+
+  mysql-server-v5:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - DATABASE_URL_DOCKER=${DATABASE_URL_DOCKER}
+    ports:
+      - "3306:3306"
     networks:
       - node-api-networks

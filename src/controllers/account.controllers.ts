@@ -36,7 +36,7 @@ async function Register(req: Request, res: Response, next: NextFunction) {
       );
     });
 
-    res.status(200).send({
+    res.status(201).send({
       message: "Register Success (Success Create User)",
     });
   } catch (error) {

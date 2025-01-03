@@ -56,11 +56,18 @@ This project is a simple demonstration of a CRUD (Create, Read, Update, Delete) 
 
 ## API ENDPOINTS
 
+- localhost:8080/account-management/[endpoints]
+
+* for example :
+  ```
+  localhost:8080/account-management/register
+  ```
+
 ### CREATE (REGISTER)
 
 - POST /register: Register a new user.
 
-* Body :
+* Request Body :
 
   ```
   {
@@ -84,7 +91,7 @@ This project is a simple demonstration of a CRUD (Create, Read, Update, Delete) 
 
 ### READ (GET ALL USERS)
 
-- GET /users: Fetch all users.
+- GET /get-users: Fetch all users.
 
 * Response :
 
@@ -105,4 +112,41 @@ This project is a simple demonstration of a CRUD (Create, Read, Update, Delete) 
   ]
   }
 
+  ```
+
+### UPDATE (UPDATE BY ID)
+
+- PUT /update-user/:id
+
+* Request Body (optional fields can be included for update) :
+
+  ```
+  {
+  "nama": "John Doe Updated",
+  "email": "john_updated@example.com",
+  "password": "newPassword123",
+  "nomorTelepon": "987654321",
+  "statusAktif": false,
+  "departement": "Marketing"
+  }
+  ```
+
+* Response :
+
+  ```
+  {
+  "message": "Success Update User"
+  }
+  ```
+
+### DELETE (DELETE BY ID)
+
+- DELETE /delete-user/:id Remove a user.
+
+* Response
+
+  ```
+  {
+  "message": "Success Delete User"
+  }
   ```
